@@ -73,3 +73,6 @@ st.caption(
     "Your feelings matter, and seeking support is a sign of strength."
 )
 
+st.markdown("---")
+st.caption("© 2026 | Developed with care by Lebogang Ramotshela 💙")
+
