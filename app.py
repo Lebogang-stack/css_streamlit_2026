@@ -9,6 +9,23 @@ import streamlit as st
 
 # App title and intro
 st.title("Student Mental Wellness Dashboard")
+
+st.markdown(
+    """
+    ### 📘 Motivation Behind the App
+
+    This application is motivated by **Chapters 4 and 5** of my Honours research study, 
+    which focused on the **statistical analysis of the onset of depression among university students**.
+
+    The app is designed to translate statistical insights into a **simple, non-diagnostic tool** 
+    that promotes **early awareness, self-reflection, and proactive support-seeking** among students.
+    """
+)
+
+
+
+
+
 st.write("A simple app to help students reflect on their mental wellness.")
 st.write("This app does not provide medical diagnosis.")
 
@@ -52,3 +69,4 @@ if stress >= 4:
             "You indicated high stress levels. If this continues, consider "
             "talking to a trusted friend, family member, or a professional."
         )
+
