@@ -22,51 +22,52 @@ st.markdown(
     """
 )
 
+st.sidebar.title("🧠 MindTrack")
+st.sidebar.write("Student Mental Wellness Dashboard")
+st.sidebar.markdown("---")
+st.sidebar.write("Daily Check-In")
+st.sidebar.write("Wellness Score")
+st.sidebar.write("Support & Feedback")
 
+st.header("📝 Daily Wellness Check-In")
 
+col1, col2 = st.columns(2)
 
+with col1:
+    mood = st.slider("Mood (1 = Very Low, 5 = Very Good)", 1, 5)
+    sleep = st.slider("Hours of Sleep Last Night", 0, 10)
 
-st.write("A simple app to help students reflect on their mental wellness.")
-st.write("This app does not provide medical diagnosis.")
+with col2:
+    stress = st.slider("Stress Level (1 = Low, 5 = Very High)", 1, 5)
+    energy = st.slider("Energy Level (1 = Very Low, 5 = Very High)", 1, 5)
 
-st.header("Daily Wellness Check-In")
+st.header("📊 Wellness Score")
 
-# Sliders for mental wellness inputs
-mood = st.slider("Mood (1 = Very Low, 5 = Very Good)", 1, 5)
-stress = st.slider("Stress Level (1 = Low, 5 = Very High)", 1, 5)
-sleep = st.slider("Hours of Sleep Last Night", 0, 10)
-energy = st.slider("Energy Level (1 = Very Low, 5 = Very High)", 1, 5)
-
-# Display selected values
-st.write("### Your Inputs")
-st.write(f"Mood: {mood}")
-st.write(f"Stress: {stress}")
-st.write(f"Sleep: {sleep} hours")
-st.write(f"Energy: {energy}")
-
-# Wellness score calculation
 wellness_score = (mood * 20) + (energy * 15) + (sleep * 5) - (stress * 15)
-
-# Keep score within 0–100
 wellness_score = max(0, min(100, wellness_score))
 
-st.header("Wellness Score")
+st.metric(label="Overall Wellness Score", value=f"{wellness_score}/100")
 st.progress(wellness_score)
-st.write(f"Your wellness score is: **{wellness_score}/100**")
 
-# Feedback based on score
-st.header("Wellness Feedback")
+st.header("🚦 Wellness Feedback")
 
 if wellness_score >= 70:
     st.success("You are doing well 🌱 Keep maintaining healthy habits.")
-elif wellness_score >= 40:
-    st.warning("You may be feeling a bit overwhelmed. Consider resting and self-care.")
-else:
-    st.error("You may be at risk of burnout. Please consider reaching out for support.")
 
-if stress >= 4:
+elif wellness_score >= 40:
+    st.warning("You may be feeling somewhat overwhelmed. Consider rest and self-care.")
+
+else:
+    st.error("You may be at risk of burnout. Please consider seeking support.")
+
+    if stress >= 4:
         st.info(
-            "You indicated high stress levels. If this continues, consider "
-            "talking to a trusted friend, family member, or a professional."
+            "High stress levels detected. If these feelings persist, "
+            "consider speaking to a trusted person or a professional."
         )
 
+st.markdown("---")
+st.caption(
+    "⚠️ Disclaimer: This app does not diagnose mental health conditions. "
+    "It is intended for educational purposes and self-reflection only."
+)
