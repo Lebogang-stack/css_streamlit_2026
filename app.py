@@ -68,6 +68,8 @@ else:
 
 st.markdown("---")
 st.caption(
-    "⚠️ Disclaimer: This app does not diagnose mental health conditions. "
-    "It is intended for educational purposes and self-reflection only."
+   "💙 Disclaimer: This app does not diagnose mental health conditions. "
+    "It is designed to encourage self-awareness, self-care, and self-love. "
+    "Your feelings matter, and seeking support is a sign of strength."
 )
+
