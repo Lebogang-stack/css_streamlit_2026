@@ -47,5 +47,8 @@ elif wellness_score >= 40:
 else:
     st.error("You may be at risk of burnout. Please consider reaching out for support.")
 
-st.info("If you feel overwhelmed for several days, consider talking to a trusted person or professional.")
-
+if stress >= 4:
+        st.info(
+            "You indicated high stress levels. If this continues, consider "
+            "talking to a trusted friend, family member, or a professional."
+        )
