@@ -7,13 +7,14 @@ Created on Tue Jan 27 17:32:56 2026
 
 import streamlit as st
 
-st.write("Hello Lebogang!")
+st.write("Hello!")
 
-st.title("Welcome to Day 3 of CSS 2026")
+st.title("Welcome to my first App")
 
 st.write("Your first streamlit App")
 
 st.header("Number selection")
 
 number = st.slider("Pick a number", 1, 100)
+
 st.write(f"You picked: {number}")
