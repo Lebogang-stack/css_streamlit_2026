@@ -2,7 +2,7 @@
 """
 Created on Tue Jan 27 17:32:56 2026
 
-@author: BBarsch
+@author: Lebogang
 """
 
 import streamlit as st
@@ -46,4 +46,6 @@ elif wellness_score >= 40:
     st.warning("You may be feeling a bit overwhelmed. Consider resting and self-care.")
 else:
     st.error("You may be at risk of burnout. Please consider reaching out for support.")
+
+st.info("If you feel overwhelmed for several days, consider talking to a trusted person or professional.")
 
